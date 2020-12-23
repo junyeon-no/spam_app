@@ -1,4 +1,4 @@
-def split_char(c = "") : 
+def split_url(c = "") : 
     index_s = -1
     index_end = 0
     serch = 'http'
@@ -20,7 +20,7 @@ def split_char(c = "") :
         url_temp.append(c[index_s:index_end])
     return url_temp
 
-c = """
+test_msg = """
 [Web 발신]
 스마일 pay
 모바일 서비스 이용
@@ -32,8 +32,8 @@ http://www.naasvfasvasvsavver.com
 https://www.vasdvabaebawe.com"""
 
 if __name__ == "__main__":
-    print('split_char(c)의 결과-------------------------------------------')
-    splits = split_char(c)
-    for split in splits:
-        print(split)
+    print('split_url(c)의 결과-------------------------------------------')
+    urls = split_url(test_msg)
+    for url in urls:
+        print(url)
     print('\n')
