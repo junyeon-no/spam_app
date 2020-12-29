@@ -1,4 +1,4 @@
-def split_url(c = "") : 
+def split_url(msg = "") : 
     index_s = -1
     index_end = 0
     msg_start_index =0
@@ -6,24 +6,24 @@ def split_url(c = "") :
     url_temp = []
     msg_temp = ""
     while True:
-        index_s = c.find(serch, index_s+1)
+        index_s = msg.find(serch, index_s+1)
         if index_s == -1:
             break 
-        if c[index_s:].find(' ')== -1 and c[index_s:].find('\n') == -1 :
-            index_end = len(c)
-        elif c[index_s:].find(' ') == -1 and c[index_s:].find('\n') != -1 :
-             index_end = c[index_s:].find('\n')+ index_s
-        elif c[index_s:].find(' ') != -1 and c[index_s:].find('\n') == -1 :
-             index_end = c[index_s:].find(' ')+ index_s
-        elif c[index_s:].find(' ')+ index_s > c[index_s:].find('\n')+ index_s  :
-            index_end = c[index_s:].find('\n')+ index_s
-        elif c[index_s:].find(' ')+ index_s < c[index_s:].find('\n')+ index_s :
-            index_end = c[index_s:].find(' ')+ index_s
-        url_temp.append(c[index_s:index_end])
-        msg_temp = msg_temp + c[msg_start_index+1 : index_s]
+        if msg[index_s:].find(' ')== -1 and msg[index_s:].find('\n') == -1 :
+            index_end = len(msg)
+        elif msg[index_s:].find(' ') == -1 and msg[index_s:].find('\n') != -1 :
+             index_end = msg[index_s:].find('\n')+ index_s
+        elif msg[index_s:].find(' ') != -1 and msg[index_s:].find('\n') == -1 :
+             index_end = msg[index_s:].find(' ')+ index_s
+        elif msg[index_s:].find(' ')+ index_s > msg[index_s:].find('\n')+ index_s  :
+            index_end = msg[index_s:].find('\n')+ index_s
+        elif msg[index_s:].find(' ')+ index_s < msg[index_s:].find('\n')+ index_s :
+            index_end = msg[index_s:].find(' ')+ index_s
+        url_temp.append(msg[index_s:index_end])
+        msg_temp = msg_temp + msg[msg_start_index+1 : index_s]
         msg_start_index = index_end
     if(msg_start_index == 0) :
-        msg_temp = c
+        msg_temp = msg
     return msg_temp, url_temp
 
 test_msg = """
