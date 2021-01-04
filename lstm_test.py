@@ -15,6 +15,11 @@ d = ["""
 [긴급재난자금] 상품권이 도착했습니다.
 확인해주세요.
 """]
+
+### tokenizer loading test
+with open('tokenizer.pickle', 'rb') as handle:
+    tokenizer = pickle.load(handle)
+### loading test
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(d)
 s = tokenizer.texts_to_sequences(d) # 단어를 숫자값, 인덱스로 변환하여 저장
