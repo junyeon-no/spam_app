@@ -51,4 +51,4 @@ max_len = 189
 data = pad_sequences(X_data, maxlen = max_len) #정수 인코딩된 데이터 패딩
 print(data)
 print(Lstm_model.predict(data))
-
+####################################
